@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Results</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Detected Shapes</h1>
+        <ul>
+            {% for shape, count in shapes.items() %}
+                <li>{{ shape }}: {{ count }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/upload_image">Upload Another Image</a>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

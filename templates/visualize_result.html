@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Visualized Result</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Visualization Result</h1>
+
+        {% if original and normalized %}
+        <div class="image-container">
+            <h3>Original Image, Normalized Image, and Difference Image</h3>
+            <div class="image-sub-container">
+                <h4>Original Image:</h4>
+                <img src="{{ url_for('static', filename='uploads/' + original) }}" alt="Original Image">
+            </div>
+            <div class="image-sub-container">
+                <h4>Normalized Image:</h4>
+                <img src="{{ url_for('static', filename='uploads/' + normalized) }}" alt="Normalized Image">
+            </div>
+            {% if difference %}
+            <div class="image-sub-container">
+                <h4>Difference Image:</h4>
+                <img src="{{ url_for('static', filename='uploads/' + difference) }}" alt="Difference Image">
+            </div>
+            {% endif %}
+        </div>
+        {% elif original %}
+        <div class="container">
+            <h3>The CSV file was successfully uploaded and processed. Check the plot image below.</h3>
+            <img src="{{ url_for('static', filename='uploads/' + normalized) }}" alt="CSV Plot">
+        </div>
+        {% else %}
+        <div class="container">
+            <h3>No data was processed.</h3>
+        </div>
+        {% endif %}
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+
+</html>

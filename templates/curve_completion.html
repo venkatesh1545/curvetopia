@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Curve Completion</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curve Completion</h1>
+        <form action="/curve_completion/" method="post" enctype="multipart/form-data">
+            <label for="occlusion_type">Select Occlusion Type:</label>
+            <select name="occlusion_type" id="occlusion_type" required>
+                <option value="connected">Connected Occlusion</option>
+                <option value="disconnected">Disconnected Occlusion</option>
+            </select>
+            <br><br>
+            <label for="file">Upload CSV File:</label>
+            <input type="file" name="file" id="file" accept=".csv" required>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+
+</html>

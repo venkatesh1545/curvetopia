@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Process Image</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Symmetry Detection Result</h1>
+        <form action="/process_image/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".png,.jpg,.jpeg" required>
+            <input type="submit" value="Upload and Process">
+        </form>
+
+        {% if filename %}
+            <h2>Uploaded Image: {{ filename }}</h2>
+            <img src="/static/uploads/{{ filename }}" alt="Uploaded Image">
+            
+            <h3>Symmetry Counts</h3>
+            <ul>
+                {% for symmetry in symmetries %}
+                    <li>
+                        <strong>Contour:</strong> {{ symmetry.contour_index }}<br>
+                        <strong>Horizontal Symmetry Lines:</strong> {{ symmetry.horizontal_symmetry }}<br>
+                        <strong>Vertical Symmetry Lines:</strong> {{ symmetry.vertical_symmetry }}
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <h3>Detected Symmetry Lines</h3>
+            <img src="/static/uploads/{{ processed_filename }}" alt="Symmetry Detected Image">
+        {% endif %}
+        
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
