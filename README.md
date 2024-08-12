@@ -176,6 +176,8 @@ Visualize curves using different formats and convert them to PNG for further ana
 
 ## Contributors
 
-- [**omteja04**](https://github.com/omteja04)
-- [**venkatesh1545**](https://github.com/venkatesh1545)
-- [**Karthik-Saladi5**](https://github.com/Karthik-Saladi5)
+**Developed by** - [**venkatesh1545**](https://github.com/venkatesh1545)
+
+**Deployed by** - [**omteja04**](https://github.com/omteja04)
+
+**Tested by** - [**Karthik-Saladi5**](https://github.com/Karthik-Saladi5)
